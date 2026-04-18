@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mint Fit</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="slideshow-container">
+
+        <div id="start-screen">
+            <h1>Welcome to Mint Fit</h1>
+            <button id="startBtn">Start Workout</button>
+        </div>
+
+        <div id="slide-screen" class="hidden">
+            <div id="progress-container">
+                <div id="progress-bar"></div>
+            </div>
+
+            <h2 id="slide-title"></h2>
+            <img id="slide-image" src="" alt="Workout Image">
+            <div id="timer"></div>
+        </div>
+
+        <div id="end-screen" class="hidden">
+            <h2>End of Workout</h2>
+            <button id="restartBtn">Restart Workout</button>
+        </div>
+
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
