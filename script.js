@@ -132,7 +132,24 @@ document.getElementById("restartBtn").addEventListener("click", restartSlideshow
 
 const progressBar = document.getElementById("progress-bar")
 
+let wakeLock = null;
+
+async function  requestWakeLock() {
+    try {
+        wakeLock = await navigator.wakeLock.request("screen");
+        console.log("Wake Lock active");
+
+        wakeLock.addEventListener("release", () => {
+            console.log("wake lock released");
+        });
+    } catch (err) {
+        console.error(`${err.name}, ${err.message}`);
+    }
+}
+
 function startSlideshow() {
+    await requestWakeLock();
+
     startScreen.classList.add("hidden");
     slidescreen.classList.remove("hidden");
     currentSlide = 0;
@@ -172,6 +189,11 @@ function showSlide() {
 function restartSlideshow() {
     endScreen.classList.add("hidden");
     startScreen.classList.remove("hidden");
+
+    if (wakeLock) {
+        wakeLock.release();
+        wakeLock = null;
+    }
 }
 
 window.addEventListener("load", () => {
