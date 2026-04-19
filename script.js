@@ -1,27 +1,27 @@
 const slides = [
     {
         title: "Shadow Boxing (Power Focus)",
-        image: "https://cdn.pixabay.com/photo/2026/03/16/20/58/20-58-26-102_1280.png",
+        image: "boxing-image.jpeg",
         time: "120"
     },
     {
         title: "Push-ups",
-        image: "https://cdn.pixabay.com/photo/2016/02/16/19/28/burpee-1203906_1280.jpg",
+        image: "push-up-image.jpeg",
         time: "60"
     },
     {
         title: "Plank",
-        image: "https://cdn.pixabay.com/photo/2016/02/16/19/28/burpee-1203906_1280.jpg",
+        image: "plank-image.jpeg",
         time: "60"
     },
     {
         title: "Rest",
-        image: "https://cdn.pixabay.com/photo/2016/02/16/19/28/burpee-1203906_1280.jpg",
+        image: "rest-image.jpeg",
         time: "60"
     },
     {
         title: "Boxing Combos (speed Focus)",
-        image: "https://cdn.pixabay.com/photo/2016/02/16/19/28/burpee-1203906_1280.jpg",
+        image: "boxing-image.jpeg",
         time: "120"
     },
     {
@@ -36,17 +36,17 @@ const slides = [
     },
     {
         title: "Rest",
-        image: "https://cdn.pixabay.com/photo/2016/02/16/19/28/burpee-1203906_1280.jpg",
+        image: "rest-image.jpeg",
         time: "60"
     },
     {
         title: "Shadow Boxing (Power Focus)",
-        image: "https://cdn.pixabay.com/photo/2016/02/16/19/28/burpee-1203906_1280.jpg",
+        image: "boxing-image.jpeg",
         time: "120"
     },
     {
         title: "Wide Push-ups",
-        image: "https://cdn.pixabay.com/photo/2016/02/16/19/28/burpee-1203906_1280.jpg",
+        image: "push-up-image.jpeg",
         time: "60"
     },
     {
@@ -56,7 +56,7 @@ const slides = [
     },
     {
         title: "Rest",
-        image: "https://cdn.pixabay.com/photo/2016/02/16/19/28/burpee-1203906_1280.jpg",
+        image: "rest-image.jpeg",
         time: "60"
     },
     {
@@ -76,12 +76,12 @@ const slides = [
     },
     {
         title: "Rest",
-        image: "https://cdn.pixabay.com/photo/2016/02/16/19/28/burpee-1203906_1280.jpg",
+        image: "rest-image.jpeg",
         time: "60"
     },
     {
         title: "Punch Out Round (Max Speed)",
-        image: "https://cdn.pixabay.com/photo/2016/02/16/19/28/burpee-1203906_1280.jpg",
+        image: "boxing-image.jpeg",
         time: "120"
     },
     {
@@ -96,7 +96,7 @@ const slides = [
     },
     {
         title: "Rest",
-        image: "https://cdn.pixabay.com/photo/2016/02/16/19/28/burpee-1203906_1280.jpg",
+        image: "rest-image.jpeg",
         time: "60"
     },
     {
@@ -203,3 +203,21 @@ window.addEventListener("load", () => {
         loadingScreen.classList.add("hidden");
     }, 800);
 });
+
+function applyThemeByTime() {
+    const now = new Date();
+    const hour = now.getHours();
+
+    const darkStart = 19; // 7 PM
+    const darkEnd = 6;   // 6 AM
+
+    const isDarkTime = hour >= darkStart || hour < darkEnd;
+
+    if (isDarkTime) {
+        document.body.classList.add("dark-mode");
+    } else {
+        document.body.classList.remove("dark-mode");
+    }
+}
+
+applyThemeByTime();
