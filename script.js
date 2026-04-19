@@ -134,7 +134,7 @@ const progressBar = document.getElementById("progress-bar")
 
 let wakeLock = null;
 
-async function  requestWakeLock() {
+async function requestWakeLock() {
     try {
         wakeLock = await navigator.wakeLock.request("screen");
         console.log("Wake Lock active");
@@ -147,7 +147,7 @@ async function  requestWakeLock() {
     }
 }
 
-function startSlideshow() {
+async function startSlideshow() {
     await requestWakeLock();
 
     startScreen.classList.add("hidden");
