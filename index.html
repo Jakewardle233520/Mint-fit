@@ -9,37 +9,93 @@
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="##2eccb6">
     <link rel="apple-touch-icon" href="icon/logo.jpeg">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
-
     <div id="loading-screen">
         <div class="loader"></div>
         <p>Loading...</p>
     </div>
 
-    <div class="slideshow-container">
+    <div class="pages-container">
+        <div id="page-workout" class="page page-active">
+            <div class="slideshow-container">
+                <div id="start-screen">
+                    <h1>Welcome to Mint Fit</h1>
+                    <button id="startBtn">Start Workout</button>
+                    <button class="showWorkout" id="show-workout">
+                        <span class="material-icons">more_vert</span>
+                    </button>
+                </div>
 
-        <div id="start-screen">
-            <h1>Welcome to Mint Fit</h1>
-            <button id="startBtn">Start Workout</button>
-        </div>
+                <div id="workoutList" class="workout-list">
+                    <div class="workout-list-container">
+                        <div id="workouttop" class="workout-top">
+                            <h2>Total Time: <span id="workoutTime">0:00</span></h2>
+                            <button id="closeWorkout">
+                                <span class="material-icons">close</span>
+                            </button>
+                        </div>
 
-        <div id="slide-screen" class="hidden">
-            <div id="progress-container">
-                <div id="progress-bar"></div>
+                        <div id="workoutListScroll" class="Workout-list-scroll">
+                        </div>
+
+                        <div id="workoutBottom" class="workout-bottom">
+                            <button id="editWorkout">Edit Workout</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="slide-screen" class="hidden">
+                    <div id="progress-container">
+                        <div id="progress-bar"></div>
+                    </div>
+
+                    <h2 id="slide-title"></h2>
+                    <img id="slide-image" src="" alt="Workout Image">
+                    <div id="timer"></div>
+                </div>
+
+                <div id="end-screen" class="hidden">
+                    <h2>End of Workout</h2>
+                    <button id="restartBtn">Restart Workout</button>
+                </div>
             </div>
-
-            <h2 id="slide-title"></h2>
-            <img id="slide-image" src="" alt="Workout Image">
-            <div id="timer"></div>
         </div>
 
-        <div id="end-screen" class="hidden">
-            <h2>End of Workout</h2>
-            <button id="restartBtn">Restart Workout</button>
+        <div id="page-calendar" class="page">
+            <div class="calendar-container">
+                <h2>Workout Calendar</h2>
+
+                <div class="calendar-header">
+                    <button id="prevMonthBtn">&lt;</button>
+                    <span id="calendarMonthYear"></span>
+                    <button id="nextMonthBtn">&gt;</button>
+                </div>
+
+                <div id="calendarGrid" class="calendar-grid"></div>
+            </div>
         </div>
 
+        <div id="page-profile" class="page">
+            <div class="profile-container">
+                <h2>Profile</h2>
+                <p>Coming soon...</p>
+            </div>
+        </div>
     </div>
+
+    <nav class="bottom-nav">
+        <button class="nav-item nav-active" data-target="page-workout">
+            <span class="material-icons">fitness_center</span>
+        </button>
+        <button class="nav-item" data-target="page-calendar">
+            <span class="material-icons">calendar_month</span>
+        </button>
+        <button class="nav-item" data-target="page-profile">
+            <span class="material-icons">person</span>
+        </button>
+    </nav>
     
     <script src="script.js"></script>
 </body>
